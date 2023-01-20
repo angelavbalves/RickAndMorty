@@ -81,10 +81,7 @@
 		8E08ACA9295B61EF0031D9E7 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				8E08ACB9295B89610031D9E7 /* Fonts */,
-				8E08ACB6295B89240031D9E7 /* TextSize */,
-				8E08ACB3295B87D70031D9E7 /* Spacing */,
-				8E08ACB2295B87BC0031D9E7 /* Colors */,
+				8ED4BA2A297ACD5B0069B203 /* DesignSystem */,
 				8E08ACAA295B620D0031D9E7 /* Constants.swift */,
 			);
 			path = Constants;
@@ -120,6 +117,17 @@
 				8E08ACBA295B89750031D9E7 /* Fonts.swift */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8ED4BA2A297ACD5B0069B203 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				8E08ACB2295B87BC0031D9E7 /* Colors */,
+				8E08ACB6295B89240031D9E7 /* TextSize */,
+				8E08ACB3295B87D70031D9E7 /* Spacing */,
+				8E08ACB9295B89610031D9E7 /* Fonts */,
+			);
+			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
