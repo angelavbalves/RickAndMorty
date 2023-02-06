@@ -88,3 +88,13 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+RickAndMorty/RickAndMorty/Resource/.DS_Store
+RickAndMorty/RickAndMorty/Sources/Common/.DS_Store
+RickAndMorty/RickAndMorty/Sources/Constants/DesignSystem/.DS_Store
+RickAndMorty/RickAndMorty/Sources/Presentation/ListCharacters/.DS_Store
+RickAndMorty/RickAndMorty/Sources/Presentation/ListEpisodes/.DS_Store
+RickAndMorty/RickAndMorty/Sources/Presentation/.DS_Store
+RickAndMorty/RickAndMorty/Sources/.DS_Store
+RickAndMorty/RickAndMorty/.DS_Store
+RickAndMorty/.DS_Store
+.DS_Store

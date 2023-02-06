@@ -7,12 +7,26 @@
 
 import UIKit
 
-class ListCharactersViewController: UIViewController {
+class ListCharactersViewController: RMViewController {
+
+    // MARK: - Properties
+    private let viewModel: ListCharactersViewModel
+
+    // MARK: - View
+    private lazy var listCharactersView = ListCharactersView()
+
+    // MARK: -  Init
+    init(viewModel: ListCharactersViewModel) {
+        self.viewModel = viewModel
+        super.init()
+    }
+
+    // MARK: - Life Cycle
+    override func loadView() {
+        view = listCharactersView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-
 }
-
