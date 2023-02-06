@@ -24,6 +24,21 @@
 		8ED4BA34297AD15A0069B203 /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED4BA33297AD15A0069B203 /* TinyConstraints */; };
 		8ED4BA37297AD16A0069B203 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED4BA36297AD16A0069B203 /* Kingfisher */; };
 		8ED4BA50297AD5CE0069B203 /* CascadeOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4BA4F297AD5CE0069B203 /* CascadeOperator.swift */; };
+		8ED4BA62297B09920069B203 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4BA61297B09920069B203 /* SideMenuViewController.swift */; };
+		8ED4BA69297B0CCA0069B203 /* RMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4BA68297B0CCA0069B203 /* RMViewController.swift */; };
+		8ED4BA6C297B10350069B203 /* RMNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4BA6B297B10350069B203 /* RMNavigationController.swift */; };
+		8ED4BA70297B21C80069B203 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4BA6F297B21C80069B203 /* AppCoordinator.swift */; };
+		8ED4BA72297B21D50069B203 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4BA71297B21D50069B203 /* CoordinatorProtocol.swift */; };
+		8ED4BA75297B2B080069B203 /* ListCharactersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4BA74297B2B080069B203 /* ListCharactersCoordinator.swift */; };
+		8ED4BA77297B2B880069B203 /* ListCharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4BA76297B2B880069B203 /* ListCharactersViewModel.swift */; };
+		8ED4BA7E297B2CF10069B203 /* SideMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4BA7D297B2CF10069B203 /* SideMenuCoordinator.swift */; };
+		8ED4BA81297B2D7D0069B203 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4BA80297B2D7D0069B203 /* SideMenuViewModel.swift */; };
+		8ED4BA83297B2EB80069B203 /* ListCharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4BA82297B2EB80069B203 /* ListCharactersView.swift */; };
+		8ED4BA85297B2EDB0069B203 /* RMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4BA84297B2EDB0069B203 /* RMView.swift */; };
+		8ED4BA87297B2FEF0069B203 /* ListCharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4BA86297B2FEF0069B203 /* ListCharacterCell.swift */; };
+		8ED4BA8B297B32C70069B203 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4BA8A297B32C70069B203 /* SideMenuView.swift */; };
+		8ED4BA8D298164000069B203 /* SideMenuRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4BA8C298164000069B203 /* SideMenuRow.swift */; };
+		8ED4BA8F298166120069B203 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4BA8E298166120069B203 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +56,21 @@
 		8E08ACBA295B89750031D9E7 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		8E08ACBD295B8E610031D9E7 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		8ED4BA4F297AD5CE0069B203 /* CascadeOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CascadeOperator.swift; sourceTree = "<group>"; };
+		8ED4BA61297B09920069B203 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		8ED4BA68297B0CCA0069B203 /* RMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMViewController.swift; sourceTree = "<group>"; };
+		8ED4BA6B297B10350069B203 /* RMNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMNavigationController.swift; sourceTree = "<group>"; };
+		8ED4BA6F297B21C80069B203 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		8ED4BA71297B21D50069B203 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		8ED4BA74297B2B080069B203 /* ListCharactersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCharactersCoordinator.swift; sourceTree = "<group>"; };
+		8ED4BA76297B2B880069B203 /* ListCharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCharactersViewModel.swift; sourceTree = "<group>"; };
+		8ED4BA7D297B2CF10069B203 /* SideMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCoordinator.swift; sourceTree = "<group>"; };
+		8ED4BA80297B2D7D0069B203 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
+		8ED4BA82297B2EB80069B203 /* ListCharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCharactersView.swift; sourceTree = "<group>"; };
+		8ED4BA84297B2EDB0069B203 /* RMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMView.swift; sourceTree = "<group>"; };
+		8ED4BA86297B2FEF0069B203 /* ListCharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCharacterCell.swift; sourceTree = "<group>"; };
+		8ED4BA8A297B32C70069B203 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		8ED4BA8C298164000069B203 /* SideMenuRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRow.swift; sourceTree = "<group>"; };
+		8ED4BA8E298166120069B203 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				8E08ACBD295B8E610031D9E7 /* AppColors.swift */,
+				8ED4BA8E298166120069B203 /* Color.swift */,
 			);
 			path = Colors;
 			sourceTree = "<group>";
@@ -172,9 +203,10 @@
 		8ED4BA3B297AD31F0069B203 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				8ED4BA5D297ADCAF0069B203 /* SideMenu */,
+				8ED4BA3C297AD32C0069B203 /* ListCharacters */,
 				8ED4BA48297AD4750069B203 /* ListEpisodes */,
 				8ED4BA44297AD4440069B203 /* ListPlaces */,
-				8ED4BA3C297AD32C0069B203 /* ListCharacters */,
 				8ED4BA5B297AD7600069B203 /* FavoriteCharacters */,
 				8ED4BA40297AD3DF0069B203 /* DetailsCharacter */,
 			);
@@ -184,6 +216,7 @@
 		8ED4BA3C297AD32C0069B203 /* ListCharacters */ = {
 			isa = PBXGroup;
 			children = (
+				8ED4BA73297B2AE80069B203 /* Coordinator */,
 				8ED4BA3F297AD36F0069B203 /* Controller */,
 				8ED4BA3D297AD3400069B203 /* View */,
 				8ED4BA3E297AD34B0069B203 /* ViewModel */,
@@ -194,6 +227,7 @@
 		8ED4BA3D297AD3400069B203 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8ED4BA82297B2EB80069B203 /* ListCharactersView.swift */,
 				8ED4BA59297AD7180069B203 /* Subviews */,
 			);
 			path = View;
@@ -202,6 +236,7 @@
 		8ED4BA3E297AD34B0069B203 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8ED4BA76297B2B880069B203 /* ListCharactersViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -217,6 +252,7 @@
 		8ED4BA40297AD3DF0069B203 /* DetailsCharacter */ = {
 			isa = PBXGroup;
 			children = (
+				8ED4BA78297B2CC30069B203 /* Coordinator */,
 				8ED4BA43297AD4120069B203 /* Controller */,
 				8ED4BA42297AD40C0069B203 /* View */,
 				8ED4BA41297AD4040069B203 /* ViewModel */,
@@ -249,6 +285,7 @@
 		8ED4BA44297AD4440069B203 /* ListPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				8ED4BA7A297B2CD50069B203 /* Coordinator */,
 				8ED4BA47297AD4520069B203 /* Controller */,
 				8ED4BA46297AD4500069B203 /* View */,
 				8ED4BA45297AD44D0069B203 /* ViewModel */,
@@ -281,6 +318,7 @@
 		8ED4BA48297AD4750069B203 /* ListEpisodes */ = {
 			isa = PBXGroup;
 			children = (
+				8ED4BA7B297B2CDA0069B203 /* Coordinator */,
 				8ED4BA4B297AD48F0069B203 /* Controller */,
 				8ED4BA4A297AD48D0069B203 /* View */,
 				8ED4BA49297AD48B0069B203 /* ViewModel */,
@@ -325,6 +363,9 @@
 		8ED4BA4D297AD5A40069B203 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8ED4BA68297B0CCA0069B203 /* RMViewController.swift */,
+				8ED4BA6B297B10350069B203 /* RMNavigationController.swift */,
+				8ED4BA84297B2EDB0069B203 /* RMView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -368,6 +409,8 @@
 		8ED4BA56297AD6E70069B203 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				8ED4BA6D297B21A30069B203 /* Protocol */,
+				8ED4BA6F297B21C80069B203 /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -389,6 +432,7 @@
 		8ED4BA59297AD7180069B203 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				8ED4BA86297B2FEF0069B203 /* ListCharacterCell.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -403,6 +447,7 @@
 		8ED4BA5B297AD7600069B203 /* FavoriteCharacters */ = {
 			isa = PBXGroup;
 			children = (
+				8ED4BA79297B2CCA0069B203 /* Coordinator */,
 			);
 			path = FavoriteCharacters;
 			sourceTree = "<group>";
@@ -413,6 +458,102 @@
 				8E08AC9B295B4F010031D9E7 /* RickAndMorty.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		8ED4BA5D297ADCAF0069B203 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				8ED4BA7C297B2CE10069B203 /* Coordinator */,
+				8ED4BA5F297ADDE80069B203 /* Controller */,
+				8ED4BA7F297B2D5B0069B203 /* ViewModel */,
+				8ED4BA5E297ADDDE0069B203 /* View */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		8ED4BA5E297ADDDE0069B203 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8ED4BA8A297B32C70069B203 /* SideMenuView.swift */,
+				8ED4BA60297ADE060069B203 /* Subviews */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8ED4BA5F297ADDE80069B203 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8ED4BA61297B09920069B203 /* SideMenuViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8ED4BA60297ADE060069B203 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				8ED4BA8C298164000069B203 /* SideMenuRow.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		8ED4BA6D297B21A30069B203 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				8ED4BA71297B21D50069B203 /* CoordinatorProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		8ED4BA73297B2AE80069B203 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				8ED4BA74297B2B080069B203 /* ListCharactersCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		8ED4BA78297B2CC30069B203 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		8ED4BA79297B2CCA0069B203 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		8ED4BA7A297B2CD50069B203 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		8ED4BA7B297B2CDA0069B203 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		8ED4BA7C297B2CE10069B203 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				8ED4BA7D297B2CF10069B203 /* SideMenuCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		8ED4BA7F297B2D5B0069B203 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8ED4BA80297B2D7D0069B203 /* SideMenuViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -498,14 +639,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E08ACBE295B8E610031D9E7 /* AppColors.swift in Sources */,
+				8ED4BA6C297B10350069B203 /* RMNavigationController.swift in Sources */,
+				8ED4BA72297B21D50069B203 /* CoordinatorProtocol.swift in Sources */,
 				8E08ACBB295B89750031D9E7 /* Fonts.swift in Sources */,
 				8E08AC9D295B4F010031D9E7 /* RickAndMorty.xcdatamodeld in Sources */,
+				8ED4BA85297B2EDB0069B203 /* RMView.swift in Sources */,
 				8E08AC97295B4F010031D9E7 /* ListCharactersViewController.swift in Sources */,
+				8ED4BA8D298164000069B203 /* SideMenuRow.swift in Sources */,
+				8ED4BA87297B2FEF0069B203 /* ListCharacterCell.swift in Sources */,
+				8ED4BA83297B2EB80069B203 /* ListCharactersView.swift in Sources */,
+				8ED4BA62297B09920069B203 /* SideMenuViewController.swift in Sources */,
+				8ED4BA81297B2D7D0069B203 /* SideMenuViewModel.swift in Sources */,
+				8ED4BA70297B21C80069B203 /* AppCoordinator.swift in Sources */,
 				8E08AC93295B4F010031D9E7 /* AppDelegate.swift in Sources */,
 				8E08ACAB295B620D0031D9E7 /* Constants.swift in Sources */,
+				8ED4BA75297B2B080069B203 /* ListCharactersCoordinator.swift in Sources */,
+				8ED4BA8F298166120069B203 /* Color.swift in Sources */,
 				8ED4BA50297AD5CE0069B203 /* CascadeOperator.swift in Sources */,
+				8ED4BA69297B0CCA0069B203 /* RMViewController.swift in Sources */,
+				8ED4BA8B297B32C70069B203 /* SideMenuView.swift in Sources */,
 				8E08ACB8295B89330031D9E7 /* TextSize.swift in Sources */,
 				8E08AC95295B4F010031D9E7 /* SceneDelegate.swift in Sources */,
+				8ED4BA77297B2B880069B203 /* ListCharactersViewModel.swift in Sources */,
+				8ED4BA7E297B2CF10069B203 /* SideMenuCoordinator.swift in Sources */,
 				8E08ACB5295B87EB0031D9E7 /* Spacing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
