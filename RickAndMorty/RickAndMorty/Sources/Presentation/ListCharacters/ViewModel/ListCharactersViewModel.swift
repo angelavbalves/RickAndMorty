@@ -6,14 +6,30 @@
 //
 
 import Foundation
+import RxSwift
+import UIKit
 
 class ListCharactersViewModel {
 
     // MARK: - Properties
     private weak var coordinator: ListCharactersCoordinator?
+    private let service: RMService
 
     // MARK: - Init
-    init(coordinator: ListCharactersCoordinator) {
+    init(
+        service: RMService = .live(),
+        coordinator: ListCharactersCoordinator
+    ) {
+        self.service = service
         self.coordinator = coordinator
+    }
+
+    func fetchCharacters(_ url: URL, _ page: Int, _ query: String) -> Observable<CharactersResponse> {
+        service
+            .characters(url, page, query)
+            .do(
+                onNext: { [weak self] (_: CharactersResponse) in
+                }
+            )
     }
 }
