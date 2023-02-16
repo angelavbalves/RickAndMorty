@@ -24,7 +24,7 @@ final class AppCoordinator: CoordinatorProtocol {
 
     // MARK: - Start
     func start() {
-        let coordinator = ListCharactersCoordinator()
+        let coordinator = LoadCoordinator()
         window.rootViewController = coordinator.rootViewController
         childCoordinator.append(coordinator)
         coordinator.start()

@@ -15,7 +15,7 @@ class ListCharactersCoordinator: CoordinatorProtocol {
     var childCoordinator: [CoordinatorProtocol] = []
 
     // MARK: - Properties
-    init(rootViewController: RMNavigationController = .init()) {
+    init(rootViewController: RMNavigationController?) {
         self.rootViewController = rootViewController
     }
     
