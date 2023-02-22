@@ -23,11 +23,11 @@ class RMViewController: UIViewController {
         navigationController as? RMNavigationController
     }
 
-    private var isSlideMenuPresented = false
-    private var sideMenuController: UIViewController!
+    var isSlideMenuPresented = false
+    private var sideMenuController: UIViewController?
     private lazy var sideMenuRightOffset: CGFloat = self.view.frame.width * 0.30
     private lazy var menuViewRightConstraint: NSLayoutConstraint = menuView.right(to: view, offset: -view.frame.width)
-    private let menuView = SideMenuView()
+    let menuView = SideMenuView()
 
     // MARK: - Init
     init() {
@@ -40,7 +40,6 @@ class RMViewController: UIViewController {
     }
 
     // MARK: - Life Cycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = barButtonItem
@@ -50,14 +49,13 @@ class RMViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        menuView.frame.origin.x = -(menuView.frame.width)
         configureMenuView()
-
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         menuView.frame.origin.x = -(menuView.frame.width)
-
     }
 
     private func configureMenuView() {
@@ -66,7 +64,6 @@ class RMViewController: UIViewController {
         menuView.topToSuperview()
         menuView.bottomToSuperview()
         menuView.right(to: view, offset: -(view.frame.width * 0.3))
-
     }
 
     @objc
@@ -101,8 +98,8 @@ class RMViewController: UIViewController {
     func configureMenuControllerIfNeeded() {
         guard sideMenuController == nil else { return }
         sideMenuController = SideMenuViewController()
+        guard let sideMenuController = sideMenuController else { return }
         addChild(sideMenuController)
-        sideMenuController?.didMove(toParent: self)
-        print("did add menu controller...")
+        sideMenuController.didMove(toParent: self)
     }
 }
