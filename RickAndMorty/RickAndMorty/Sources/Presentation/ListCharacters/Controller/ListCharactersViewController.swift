@@ -5,8 +5,8 @@
 //  Created by Angela Alves on 27/12/22.
 //
 
-import UIKit
 import RxSwift
+import UIKit
 
 class ListCharactersViewController: RMViewController {
 
@@ -16,6 +16,7 @@ class ListCharactersViewController: RMViewController {
     private var urls: Observable<AppEndpoints>?
     private let disposeBag = DisposeBag()
     private var currentPage = 1
+    private var characters = [CharacterResponse]()
 
     // MARK: - View
     private lazy var listCharactersView = ListCharactersView()
@@ -40,8 +41,12 @@ class ListCharactersViewController: RMViewController {
         guard let url = ApiClient.getURLs()?.characters else { return }
         viewModel
             .fetchCharacters(url, currentPage, query)
-            .subscribe(onNext: { charactersResponse in
+            .subscribe(onNext: { [weak self] charactersResponse in
                 let characters = charactersResponse.results.map(CharacterResponse.init)
+                self?.characters = characters
+                DispatchQueue.main.async {
+                    self?.listCharactersView.receive(characters)
+                }
             })
             .disposed(by: disposeBag)
     }

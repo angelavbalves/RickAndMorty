@@ -21,6 +21,17 @@ class SideMenuRow: RMView {
         configure()
     }
 
+
+    // MARK: - Views
+    private let bottomView = UIView() .. {
+        $0.layer.masksToBounds = false
+        $0.layer.cornerRadius = 10.0
+        $0.backgroundColor = AppColors.lightGreen
+        $0.layer.shadowColor = UIColor.black.cgColor
+        $0.layer.shadowOpacity = 0.5
+        $0.layer.shadowOffset = CGSize(width: 0, height: 3)
+    }
+
     private let stackView = UIStackView() .. {
         $0.axis = .horizontal
         $0.spacing  = 6
@@ -34,21 +45,22 @@ class SideMenuRow: RMView {
     }
 
     private let menuLabel = UILabel() .. {
-//        $0.font = UIFont(name: "Comic Sans", size: 8)
-        $0.font = .systemFont(ofSize: 16, weight: .bold)
+        $0.font = Fonts.subtitle
         $0.numberOfLines = 0
-        $0.textColor = .white
+        $0.textColor = .black
         $0.lineBreakMode = .byWordWrapping
     }
 
     override func configureSubviews() {
-        addSubview(stackView)
+        addSubview(bottomView)
+        bottomView.addSubview(stackView)
         stackView.addArrangedSubview(menuIcon)
         stackView.addArrangedSubview(menuLabel)
     }
 
     override func configureConstraints() {
-        stackView.edgesToSuperview()
+        bottomView.edgesToSuperview()
+        stackView.edges(to: bottomView, insets: .uniform(Spacing.medium))
     }
 
     private func configure() {

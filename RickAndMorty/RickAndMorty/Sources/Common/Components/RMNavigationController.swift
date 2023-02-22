@@ -32,7 +32,7 @@ class RMNavigationController: UINavigationController {
     func configureAppearance() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .green
+        appearance.backgroundColor = AppColors.darkGreen
 
         navigationBar.tintColor = .black
 
