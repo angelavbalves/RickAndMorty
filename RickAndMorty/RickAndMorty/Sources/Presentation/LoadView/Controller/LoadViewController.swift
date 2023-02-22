@@ -22,6 +22,7 @@ class LoadViewController: RMViewController {
         super.init()
     }
 
+    // MARK: - Life Cycle
     override func loadView() {
         view = loadingView
     }
@@ -31,6 +32,7 @@ class LoadViewController: RMViewController {
         fetchBaseURLs()
     }
 
+    // MARK: - Request
     func fetchBaseURLs() {
         viewModel
             .fetchURLs()
