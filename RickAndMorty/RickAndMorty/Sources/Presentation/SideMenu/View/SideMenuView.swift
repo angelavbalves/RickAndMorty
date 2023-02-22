@@ -13,24 +13,24 @@ class SideMenuView: RMView {
 
     private let charactersRow = SideMenuRow(
         icon: UIImage(
-            systemName: "person.crop.circle.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal),
+            systemName: "person.crop.circle.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal),
         title: "Characters")
-    private let favoriteCharactersRow = SideMenuRow(
+    private let favoriteEpisodesRow = SideMenuRow(
         icon: UIImage(
-            systemName: "heart.circle.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal),
-        title: "Favorite characters")
+            systemName: "heart.circle.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal),
+        title: "Favorite episodes")
     private let placesRow = SideMenuRow(
         icon: UIImage(
-            systemName: "globe.europe.africa.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal),
+            systemName: "globe.europe.africa.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal),
         title: "Places")
     private let episodesRow = SideMenuRow(
         icon: UIImage(
-            systemName: "film.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal),
+            systemName: "film.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal),
         title: "Episodes")
 
     override init() {
         super.init()
-        backgroundColor = .green
+        backgroundColor = AppColors.darkGreen
     }
 
     private let stackView = UIStackView() .. {
@@ -39,21 +39,25 @@ class SideMenuView: RMView {
         $0.alignment = .leading
     }
 
-    private let menuStackView = UIStackView() .. {
+    private lazy var menuStackView = UIStackView() .. {
         $0.axis = .vertical
         $0.spacing = 24
+        $0.width(180)
     }
 
-    private let darkModeSegmentedControl = UISegmentedControl(items: ["Dark", "Light"])
+    private let darkModeSegmentedControl = UISegmentedControl(items: ["Light", "Dark"]) .. {
+        $0.selectedSegmentTintColor = AppColors.lightGreen
+        $0.selectedSegmentIndex = 0
+    }
 
     override func configureSubviews() {
         addSubview(stackView)
         stackView.addArrangedSubview(menuStackView)
         stackView.addArrangedSubview(darkModeSegmentedControl)
         menuStackView.addArrangedSubview(charactersRow)
-        menuStackView.addArrangedSubview(favoriteCharactersRow)
         menuStackView.addArrangedSubview(placesRow)
         menuStackView.addArrangedSubview(episodesRow)
+        menuStackView.addArrangedSubview(favoriteEpisodesRow)
     }
 
     override func configureConstraints() {
