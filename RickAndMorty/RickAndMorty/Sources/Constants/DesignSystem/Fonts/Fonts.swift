@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 struct Fonts {
-    static let title = UIFont(name: "Impact", size: TextSize.medium)
-    static let text = UIFont(name: "Comic Sans", size: TextSize.small)
+    static let title = UIFont(name: "MarkerFelt-Thin", size: TextSize.large)
+    static let subtitle = UIFont(name: "MarkerFelt-Thin", size: TextSize.medium)
+    static let text = UIFont(name: "Courier New", size: TextSize.medium)
 }

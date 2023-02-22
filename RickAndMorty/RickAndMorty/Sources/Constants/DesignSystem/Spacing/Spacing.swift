@@ -8,9 +8,9 @@
 import Foundation
 
 struct Spacing {
-    static let tiny = 6
-    static let small = 8
-    static let medium = 12
-    static let large = 16
-    static let huge = 20
+    static let tiny = 6.0
+    static let small = 8.0
+    static let medium = 12.0
+    static let large = 16.0
+    static let huge = 20.0
 }
