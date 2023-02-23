@@ -24,6 +24,11 @@
 		8E3A5BFC299C1FFA00FC8588 /* LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5BFB299C1FFA00FC8588 /* LoadView.swift */; };
 		8E3A5BFF299C20CE00FC8588 /* LoadCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5BFE299C20CE00FC8588 /* LoadCoordinator.swift */; };
 		8E3A5C01299E5CEB00FC8588 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5C00299E5CEB00FC8588 /* ApiClient.swift */; };
+		8E3A5D3D29A6A8AC00FC8588 /* ListEpisodesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5D3C29A6A8AC00FC8588 /* ListEpisodesCoordinator.swift */; };
+		8E3A5D3F29A6A8D800FC8588 /* ListEpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5D3E29A6A8D800FC8588 /* ListEpisodesViewController.swift */; };
+		8E3A5D4129A6A92200FC8588 /* ListEpisodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5D4029A6A92200FC8588 /* ListEpisodesViewModel.swift */; };
+		8E3A5D4329A6B4C300FC8588 /* ListEpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5D4229A6B4C300FC8588 /* ListEpisodesView.swift */; };
+		8E3A5D4529A6B7E300FC8588 /* ListEpisodesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5D4429A6B7E300FC8588 /* ListEpisodesCell.swift */; };
 		8EB964D3299155000019D68D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EB964D2299155000019D68D /* LaunchScreen.storyboard */; };
 		8ED4BA2D297AD14B0069B203 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED4BA2C297AD14B0069B203 /* RxCocoa */; };
 		8ED4BA2F297AD14B0069B203 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED4BA2E297AD14B0069B203 /* RxRelay */; };
@@ -73,6 +78,11 @@
 		8E3A5BFB299C1FFA00FC8588 /* LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadView.swift; sourceTree = "<group>"; };
 		8E3A5BFE299C20CE00FC8588 /* LoadCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCoordinator.swift; sourceTree = "<group>"; };
 		8E3A5C00299E5CEB00FC8588 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		8E3A5D3C29A6A8AC00FC8588 /* ListEpisodesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesCoordinator.swift; sourceTree = "<group>"; };
+		8E3A5D3E29A6A8D800FC8588 /* ListEpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesViewController.swift; sourceTree = "<group>"; };
+		8E3A5D4029A6A92200FC8588 /* ListEpisodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesViewModel.swift; sourceTree = "<group>"; };
+		8E3A5D4229A6B4C300FC8588 /* ListEpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesView.swift; sourceTree = "<group>"; };
+		8E3A5D4429A6B7E300FC8588 /* ListEpisodesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesCell.swift; sourceTree = "<group>"; };
 		8EB964CE299153150019D68D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RickAndMorty/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		8EB964D2299155000019D68D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8ED4BA4F297AD5CE0069B203 /* CascadeOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CascadeOperator.swift; sourceTree = "<group>"; };
@@ -225,6 +235,14 @@
 			isa = PBXGroup;
 			children = (
 				8E3A5BFE299C20CE00FC8588 /* LoadCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		8E3A5D3B29A6A88700FC8588 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				8E3A5D3C29A6A8AC00FC8588 /* ListEpisodesCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -388,6 +406,7 @@
 		8ED4BA48297AD4750069B203 /* ListEpisodes */ = {
 			isa = PBXGroup;
 			children = (
+				8E3A5D3B29A6A88700FC8588 /* Coordinator */,
 				8ED4BA4B297AD48F0069B203 /* Controller */,
 				8ED4BA4A297AD48D0069B203 /* View */,
 				8ED4BA49297AD48B0069B203 /* ViewModel */,
@@ -398,6 +417,7 @@
 		8ED4BA49297AD48B0069B203 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8E3A5D4029A6A92200FC8588 /* ListEpisodesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -405,6 +425,7 @@
 		8ED4BA4A297AD48D0069B203 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8E3A5D4229A6B4C300FC8588 /* ListEpisodesView.swift */,
 				8ED4BA57297AD7050069B203 /* Subviews */,
 			);
 			path = View;
@@ -413,6 +434,7 @@
 		8ED4BA4B297AD48F0069B203 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8E3A5D3E29A6A8D800FC8588 /* ListEpisodesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -493,6 +515,7 @@
 		8ED4BA57297AD7050069B203 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				8E3A5D4429A6B7E300FC8588 /* ListEpisodesCell.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -713,11 +736,16 @@
 				8EFA959329914C180031EA99 /* RMView.swift in Sources */,
 				8E3A5BFC299C1FFA00FC8588 /* LoadView.swift in Sources */,
 				8E08AC9D295B4F010031D9E7 /* RickAndMorty.xcdatamodeld in Sources */,
+				8E3A5D3D29A6A8AC00FC8588 /* ListEpisodesCoordinator.swift in Sources */,
 				8E08AC97295B4F010031D9E7 /* ListCharactersViewController.swift in Sources */,
 				8E3A5BF7299BC5ED00FC8588 /* RMClient.swift in Sources */,
 				8EFA95AB29914D850031EA99 /* SideMenuCoordinator.swift in Sources */,
+				8E3A5D4329A6B4C300FC8588 /* ListEpisodesView.swift in Sources */,
 				8E08AC93295B4F010031D9E7 /* AppDelegate.swift in Sources */,
+				8E3A5D3F29A6A8D800FC8588 /* ListEpisodesViewController.swift in Sources */,
+				8E3A5D4129A6A92200FC8588 /* ListEpisodesViewModel.swift in Sources */,
 				8EFA959829914C630031EA99 /* ListCharactersCoordinator.swift in Sources */,
+				8E3A5D4529A6B7E300FC8588 /* ListEpisodesCell.swift in Sources */,
 				8E006AC32992E375002ADD16 /* LoadViewController.swift in Sources */,
 				8E08ACAB295B620D0031D9E7 /* Constants.swift in Sources */,
 				8EFA95AE29914D850031EA99 /* SideMenuView.swift in Sources */,

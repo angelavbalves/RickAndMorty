@@ -12,8 +12,6 @@ class ListCharactersViewController: RMViewController {
 
     // MARK: - Properties
     private let viewModel: ListCharactersViewModel
-    private let rmClient = RMClient()
-    private var urls: Observable<AppEndpoints>?
     private let disposeBag = DisposeBag()
     private var currentPage = 1
     private var characters = [CharacterResponse]()
