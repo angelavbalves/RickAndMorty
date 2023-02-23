@@ -23,11 +23,6 @@ class ListCharactersView: RMView {
         $0.separatorStyle = .none
     }
 
-    // MARK: - Init
-    override init() {
-        super.init()
-    }
-
     // MARK: - Setup
     override func configureSubviews() {
         tableView.backgroundColor = AppColors.darkGreen
