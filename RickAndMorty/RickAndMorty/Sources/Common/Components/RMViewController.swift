@@ -23,11 +23,8 @@ class RMViewController: UIViewController {
         navigationController as? RMNavigationController
     }
 
-    var isSlideMenuPresented = false
-    private var sideMenuController: UIViewController?
-    private lazy var sideMenuRightOffset: CGFloat = self.view.frame.width * 0.30
-    private lazy var menuViewRightConstraint: NSLayoutConstraint = menuView.right(to: view, offset: -view.frame.width)
-    let menuView = SideMenuView()
+    private lazy var sideMenuManager = SideMenuManager(navController: rmNavigationController ?? RMNavigationController())
+    private lazy var sideMenuView = sideMenuManager.menuView
 
     // MARK: - Init
     init() {
@@ -44,62 +41,25 @@ class RMViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = barButtonItem
         title = "Rick & Morty"
-        configureHomeController()
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        menuView.frame.origin.x = -(menuView.frame.width)
-        configureMenuView()
+        sideMenuView.frame.origin.x = -(sideMenuView.frame.width)
+        configureMenu()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        menuView.frame.origin.x = -(menuView.frame.width)
+        sideMenuView.frame.origin.x = -(sideMenuView.frame.width)
     }
 
-    private func configureMenuView() {
-        view.addSubview(menuView)
-        menuView.leftToSuperview()
-        menuView.topToSuperview()
-        menuView.bottomToSuperview()
-        menuView.right(to: view, offset: -(view.frame.width * 0.3))
+    private func configureMenu() {
+        sideMenuManager.configureMenu(on: self)
     }
 
     @objc
     func menuBarButtonItemTapped() {
-        if isSlideMenuPresented {
-            isSlideMenuPresented = false
-            UIView.animate(
-                withDuration: 0.5,
-                delay: 0,
-                usingSpringWithDamping: 0.8,
-                initialSpringVelocity: 0,
-                options: .curveEaseInOut
-            ) {
-                self.menuView.frame.origin.x = -(self.menuView.frame.width)
-            }
-        } else {
-            isSlideMenuPresented = true
-            UIView.animate(
-                withDuration: 0.3,
-                delay: 0,
-                usingSpringWithDamping: 0.8,
-                initialSpringVelocity: 0,
-                options: .beginFromCurrentState
-            ) {
-                self.menuView.frame.origin.x = 0
-            }
-        }
-    }
-
-    func configureHomeController() {}
-
-    func configureMenuControllerIfNeeded() {
-        guard sideMenuController == nil else { return }
-        sideMenuController = SideMenuViewController()
-        guard let sideMenuController = sideMenuController else { return }
-        addChild(sideMenuController)
-        sideMenuController.didMove(toParent: self)
+        sideMenuManager.showSideMenu()
     }
 }
