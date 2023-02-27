@@ -21,11 +21,11 @@ class ListEpisodesView: RMView {
         $0.dataSource = self
         $0.register(ListEpisodesCell.self, forCellReuseIdentifier: ListEpisodesCell.identifier)
         $0.separatorStyle = .none
+        $0.backgroundColor = AppColors.lightPurple
     }
 
     // MARK: - Init
     override func configureSubviews() {
-        backgroundColor = AppColors.lightPurple
         addSubview(tableView)
     }
 
