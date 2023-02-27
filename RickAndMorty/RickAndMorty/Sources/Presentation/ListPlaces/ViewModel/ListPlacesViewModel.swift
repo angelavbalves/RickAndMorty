@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class ListPlacesViewModel {
 
@@ -20,5 +21,10 @@ class ListPlacesViewModel {
     ) {
         self.service = service
         self.coordinator = coordinator
+    }
+
+    func fetchPlaces(_ url: URL, _ page: Int, _ query: String) -> Observable<LocationsResponse> {
+        service
+            .locations(url, page, query)
     }
 }

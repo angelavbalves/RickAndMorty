@@ -34,6 +34,7 @@
 		8E3A5D4B29A927E000FC8588 /* ListPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5D4A29A927E000FC8588 /* ListPlacesViewController.swift */; };
 		8E3A5D4F29A9285B00FC8588 /* ListPlacesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5D4E29A9285B00FC8588 /* ListPlacesCoordinator.swift */; };
 		8E3A5D5129A929D500FC8588 /* ListPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5D5029A929D500FC8588 /* ListPlacesView.swift */; };
+		8E3A5D5329AD2CAC00FC8588 /* ListPlacesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5D5229AD2CAC00FC8588 /* ListPlacesCell.swift */; };
 		8EB964D3299155000019D68D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EB964D2299155000019D68D /* LaunchScreen.storyboard */; };
 		8ED4BA2D297AD14B0069B203 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED4BA2C297AD14B0069B203 /* RxCocoa */; };
 		8ED4BA2F297AD14B0069B203 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED4BA2E297AD14B0069B203 /* RxRelay */; };
@@ -93,6 +94,7 @@
 		8E3A5D4A29A927E000FC8588 /* ListPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlacesViewController.swift; sourceTree = "<group>"; };
 		8E3A5D4E29A9285B00FC8588 /* ListPlacesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlacesCoordinator.swift; sourceTree = "<group>"; };
 		8E3A5D5029A929D500FC8588 /* ListPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlacesView.swift; sourceTree = "<group>"; };
+		8E3A5D5229AD2CAC00FC8588 /* ListPlacesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlacesCell.swift; sourceTree = "<group>"; };
 		8EB964CE299153150019D68D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RickAndMorty/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		8EB964D2299155000019D68D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8ED4BA4F297AD5CE0069B203 /* CascadeOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CascadeOperator.swift; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 		8ED4BA58297AD70F0069B203 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				8E3A5D5229AD2CAC00FC8588 /* ListPlacesCell.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -742,6 +745,7 @@
 				8EFA958C29914BCB0031EA99 /* AppCoordinator.swift in Sources */,
 				8E08ACBE295B8E610031D9E7 /* AppColors.swift in Sources */,
 				8EFA959429914C180031EA99 /* RMNavigationController.swift in Sources */,
+				8E3A5D5329AD2CAC00FC8588 /* ListPlacesCell.swift in Sources */,
 				8EFA959E29914CB40031EA99 /* ListCharactersViewModel.swift in Sources */,
 				8E3A5D4F29A9285B00FC8588 /* ListPlacesCoordinator.swift in Sources */,
 				8EFA95AC29914D850031EA99 /* SideMenuViewController.swift in Sources */,

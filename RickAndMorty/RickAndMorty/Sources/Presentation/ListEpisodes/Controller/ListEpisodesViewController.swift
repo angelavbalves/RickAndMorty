@@ -32,6 +32,7 @@ class ListEpisodesViewController: RMViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Episodes"
         fetchEpisodes(currentPage, "")
     }
 
