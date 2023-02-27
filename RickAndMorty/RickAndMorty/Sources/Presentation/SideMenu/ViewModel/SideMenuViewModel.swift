@@ -16,4 +16,16 @@ class SideMenuViewModel {
     init(coordinator: SideMenuCoordinator) {
         self.coordinator = coordinator
     }
+
+    func showCharacterList() {
+        coordinator?.showCharacterList()
+    }
+
+    func showEpisodesList() {
+        coordinator?.showEpisodesList()
+    }
+
+    func showPlacesList() {
+        coordinator?.showPlacesList()
+    }
 }

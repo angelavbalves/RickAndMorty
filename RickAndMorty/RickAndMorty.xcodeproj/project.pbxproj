@@ -29,6 +29,11 @@
 		8E3A5D4129A6A92200FC8588 /* ListEpisodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5D4029A6A92200FC8588 /* ListEpisodesViewModel.swift */; };
 		8E3A5D4329A6B4C300FC8588 /* ListEpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5D4229A6B4C300FC8588 /* ListEpisodesView.swift */; };
 		8E3A5D4529A6B7E300FC8588 /* ListEpisodesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5D4429A6B7E300FC8588 /* ListEpisodesCell.swift */; };
+		8E3A5D4729A8F73900FC8588 /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5D4629A8F73900FC8588 /* SideMenuManager.swift */; };
+		8E3A5D4929A9273400FC8588 /* ListPlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5D4829A9273300FC8588 /* ListPlacesViewModel.swift */; };
+		8E3A5D4B29A927E000FC8588 /* ListPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5D4A29A927E000FC8588 /* ListPlacesViewController.swift */; };
+		8E3A5D4F29A9285B00FC8588 /* ListPlacesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5D4E29A9285B00FC8588 /* ListPlacesCoordinator.swift */; };
+		8E3A5D5129A929D500FC8588 /* ListPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A5D5029A929D500FC8588 /* ListPlacesView.swift */; };
 		8EB964D3299155000019D68D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EB964D2299155000019D68D /* LaunchScreen.storyboard */; };
 		8ED4BA2D297AD14B0069B203 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED4BA2C297AD14B0069B203 /* RxCocoa */; };
 		8ED4BA2F297AD14B0069B203 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED4BA2E297AD14B0069B203 /* RxRelay */; };
@@ -83,6 +88,11 @@
 		8E3A5D4029A6A92200FC8588 /* ListEpisodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesViewModel.swift; sourceTree = "<group>"; };
 		8E3A5D4229A6B4C300FC8588 /* ListEpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesView.swift; sourceTree = "<group>"; };
 		8E3A5D4429A6B7E300FC8588 /* ListEpisodesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesCell.swift; sourceTree = "<group>"; };
+		8E3A5D4629A8F73900FC8588 /* SideMenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuManager.swift; sourceTree = "<group>"; };
+		8E3A5D4829A9273300FC8588 /* ListPlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlacesViewModel.swift; sourceTree = "<group>"; };
+		8E3A5D4A29A927E000FC8588 /* ListPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlacesViewController.swift; sourceTree = "<group>"; };
+		8E3A5D4E29A9285B00FC8588 /* ListPlacesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlacesCoordinator.swift; sourceTree = "<group>"; };
+		8E3A5D5029A929D500FC8588 /* ListPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlacesView.swift; sourceTree = "<group>"; };
 		8EB964CE299153150019D68D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RickAndMorty/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		8EB964D2299155000019D68D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8ED4BA4F297AD5CE0069B203 /* CascadeOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CascadeOperator.swift; sourceTree = "<group>"; };
@@ -247,6 +257,14 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		8E3A5D4D29A9282800FC8588 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				8E3A5D4E29A9285B00FC8588 /* ListPlacesCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		8ED4BA2A297ACD5B0069B203 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +392,7 @@
 		8ED4BA44297AD4440069B203 /* ListPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				8E3A5D4D29A9282800FC8588 /* Coordinator */,
 				8ED4BA47297AD4520069B203 /* Controller */,
 				8ED4BA46297AD4500069B203 /* View */,
 				8ED4BA45297AD44D0069B203 /* ViewModel */,
@@ -384,6 +403,7 @@
 		8ED4BA45297AD44D0069B203 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8E3A5D4829A9273300FC8588 /* ListPlacesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -392,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				8ED4BA58297AD70F0069B203 /* Subviews */,
+				8E3A5D5029A929D500FC8588 /* ListPlacesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -399,6 +420,7 @@
 		8ED4BA47297AD4520069B203 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8E3A5D4A29A927E000FC8588 /* ListPlacesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -588,6 +610,7 @@
 				8EFA95A229914D850031EA99 /* Coordinator */,
 				8EFA95A429914D850031EA99 /* Controller */,
 				8EFA95A629914D850031EA99 /* View */,
+				8E3A5D4629A8F73900FC8588 /* SideMenuManager.swift */,
 			);
 			name = SideMenu;
 			path = RickAndMorty/Sources/Presentation/SideMenu;
@@ -720,8 +743,11 @@
 				8E08ACBE295B8E610031D9E7 /* AppColors.swift in Sources */,
 				8EFA959429914C180031EA99 /* RMNavigationController.swift in Sources */,
 				8EFA959E29914CB40031EA99 /* ListCharactersViewModel.swift in Sources */,
+				8E3A5D4F29A9285B00FC8588 /* ListPlacesCoordinator.swift in Sources */,
 				8EFA95AC29914D850031EA99 /* SideMenuViewController.swift in Sources */,
+				8E3A5D5129A929D500FC8588 /* ListPlacesView.swift in Sources */,
 				8E3A5C01299E5CEB00FC8588 /* ApiClient.swift in Sources */,
+				8E3A5D4B29A927E000FC8588 /* ListPlacesViewController.swift in Sources */,
 				8E3A5BF9299BD93100FC8588 /* Errors.swift in Sources */,
 				8ED6B43229918B5C0019CD34 /* LocationsResponse.swift in Sources */,
 				8EFA959C29914C750031EA99 /* ListCharacterCell.swift in Sources */,
@@ -748,6 +774,7 @@
 				8E3A5D4529A6B7E300FC8588 /* ListEpisodesCell.swift in Sources */,
 				8E006AC32992E375002ADD16 /* LoadViewController.swift in Sources */,
 				8E08ACAB295B620D0031D9E7 /* Constants.swift in Sources */,
+				8E3A5D4929A9273400FC8588 /* ListPlacesViewModel.swift in Sources */,
 				8EFA95AE29914D850031EA99 /* SideMenuView.swift in Sources */,
 				8ED4BA50297AD5CE0069B203 /* CascadeOperator.swift in Sources */,
 				8E3A5BFF299C20CE00FC8588 /* LoadCoordinator.swift in Sources */,
@@ -758,6 +785,7 @@
 				8E08AC95295B4F010031D9E7 /* SceneDelegate.swift in Sources */,
 				8ED6B42C29917EFE0019CD34 /* AppEndpoints.swift in Sources */,
 				8E08ACB5295B87EB0031D9E7 /* Spacing.swift in Sources */,
+				8E3A5D4729A8F73900FC8588 /* SideMenuManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

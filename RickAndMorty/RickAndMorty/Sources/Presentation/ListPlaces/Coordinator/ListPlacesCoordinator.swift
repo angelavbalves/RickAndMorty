@@ -1,14 +1,14 @@
 //
-//  ListEpisodesCoordinator.swift
+//  ListPlacesCoordinator.swift
 //  RickAndMorty
 //
-//  Created by Angela Alves on 22/02/23.
+//  Created by Angela Alves on 24/02/23.
 //
 
 import Foundation
 import UIKit
 
-class ListEpisodesCoordinator: CoordinatorProtocol {
+class ListPlacesCoordinator: CoordinatorProtocol {
 
     // MARK: - Properties
     var rootViewController: RMNavigationController?
@@ -20,8 +20,8 @@ class ListEpisodesCoordinator: CoordinatorProtocol {
     }
 
     func start() {
-        let viewModel = ListEpisodesViewModel(coordinator: self)
-        let controller = ListEpisodesViewController(viewModel: viewModel)
+        let viewModel = ListPlacesViewModel(coordinator: self)
+        let controller = ListPlacesViewController(viewModel: viewModel)
 
         rootViewController?.setViewControllers([controller], animated: true)
     }
