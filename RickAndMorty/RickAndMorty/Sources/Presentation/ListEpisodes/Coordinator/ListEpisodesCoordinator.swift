@@ -23,6 +23,6 @@ class ListEpisodesCoordinator: CoordinatorProtocol {
         let viewModel = ListEpisodesViewModel(coordinator: self)
         let controller = ListEpisodesViewController(viewModel: viewModel)
 
-        rootViewController?.setViewControllers([controller], animated: false)
+        rootViewController?.setViewControllers([controller], animated: true)
     }
 }
