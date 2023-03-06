@@ -42,11 +42,11 @@ class DetailsCharacterView: RMView {
         $0.setHugging(.required, for: .vertical)
     }
 
-    private lazy var origin = RMStackView()
+    private lazy var origin = RMStackViewAttributes()
 
-    private lazy var gender = RMStackView()
+    private lazy var gender = RMStackViewAttributes()
 
-    private lazy var species = RMStackView()
+    private lazy var species = RMStackViewAttributes()
 
     override func configureSubviews() {
         addSubview(backgroundStackView)
