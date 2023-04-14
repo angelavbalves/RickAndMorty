@@ -10,15 +10,15 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var appCoordinator: AppCoordinator?
+    let router = AppCoordinator().strongRouter
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
-        self.appCoordinator = AppCoordinator(window: window)
-        appCoordinator?.start()
+
         window.windowScene = windowScene
+        router.setRoot(for: window)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {}
