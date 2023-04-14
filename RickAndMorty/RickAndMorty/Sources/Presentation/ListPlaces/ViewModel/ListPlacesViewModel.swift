@@ -11,20 +11,15 @@ import RxSwift
 class ListPlacesViewModel {
 
     // MARK: - Properties
-    private weak var coordinator: ListPlacesCoordinator?
+    weak var coordinator: AppCoordinator?
     private let service: RMService
 
     // MARK: - Init
     init(
         service: RMService = .live(),
-        coordinator: ListPlacesCoordinator
+        coordinator: AppCoordinator?
     ) {
         self.service = service
         self.coordinator = coordinator
-    }
-
-    func fetchPlaces(_ url: URL, _ page: Int, _ query: String) -> Observable<LocationsResponse> {
-        service
-            .locations(url, page, query)
     }
 }
