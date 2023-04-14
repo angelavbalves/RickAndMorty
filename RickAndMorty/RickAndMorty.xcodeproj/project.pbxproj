@@ -18,6 +18,11 @@
 		8E08ACB8295B89330031D9E7 /* TextSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E08ACB7295B89330031D9E7 /* TextSize.swift */; };
 		8E08ACBB295B89750031D9E7 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E08ACBA295B89750031D9E7 /* Fonts.swift */; };
 		8E08ACBE295B8E610031D9E7 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E08ACBD295B8E610031D9E7 /* AppColors.swift */; };
+		8ED4BA2D297AD14B0069B203 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED4BA2C297AD14B0069B203 /* RxCocoa */; };
+		8ED4BA2F297AD14B0069B203 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED4BA2E297AD14B0069B203 /* RxRelay */; };
+		8ED4BA31297AD14B0069B203 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED4BA30297AD14B0069B203 /* RxSwift */; };
+		8ED4BA34297AD15A0069B203 /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED4BA33297AD15A0069B203 /* TinyConstraints */; };
+		8ED4BA37297AD16A0069B203 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED4BA36297AD16A0069B203 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +46,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ED4BA31297AD14B0069B203 /* RxSwift in Frameworks */,
+				8ED4BA2F297AD14B0069B203 /* RxRelay in Frameworks */,
+				8ED4BA2D297AD14B0069B203 /* RxCocoa in Frameworks */,
+				8ED4BA34297AD15A0069B203 /* TinyConstraints in Frameworks */,
+				8ED4BA37297AD16A0069B203 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +156,13 @@
 			dependencies = (
 			);
 			name = RickAndMorty;
+			packageProductDependencies = (
+				8ED4BA2C297AD14B0069B203 /* RxCocoa */,
+				8ED4BA2E297AD14B0069B203 /* RxRelay */,
+				8ED4BA30297AD14B0069B203 /* RxSwift */,
+				8ED4BA33297AD15A0069B203 /* TinyConstraints */,
+				8ED4BA36297AD16A0069B203 /* Kingfisher */,
+			);
 			productName = RickAndMorty;
 			productReference = 8E08AC8F295B4F010031D9E7 /* RickAndMorty.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +191,11 @@
 				Base,
 			);
 			mainGroup = 8E08AC86295B4F010031D9E7;
+			packageReferences = (
+				8ED4BA2B297AD14B0069B203 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				8ED4BA32297AD15A0069B203 /* XCRemoteSwiftPackageReference "TinyConstraints" */,
+				8ED4BA35297AD16A0069B203 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 8E08AC90295B4F010031D9E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -418,6 +440,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8ED4BA2B297AD14B0069B203 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		8ED4BA32297AD15A0069B203 /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/roberthein/TinyConstraints";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		8ED4BA35297AD16A0069B203 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8ED4BA2C297AD14B0069B203 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ED4BA2B297AD14B0069B203 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		8ED4BA2E297AD14B0069B203 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ED4BA2B297AD14B0069B203 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		8ED4BA30297AD14B0069B203 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ED4BA2B297AD14B0069B203 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		8ED4BA33297AD15A0069B203 /* TinyConstraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ED4BA32297AD15A0069B203 /* XCRemoteSwiftPackageReference "TinyConstraints" */;
+			productName = TinyConstraints;
+		};
+		8ED4BA36297AD16A0069B203 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ED4BA35297AD16A0069B203 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8E08AC9B295B4F010031D9E7 /* RickAndMorty.xcdatamodeld */ = {
