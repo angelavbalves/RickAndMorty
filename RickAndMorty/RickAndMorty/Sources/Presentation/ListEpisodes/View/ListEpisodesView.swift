@@ -16,7 +16,7 @@ class ListEpisodesView: RMView {
     private var episodes = [EpisodeResponse]()
 
     // MARK: - View
-    private lazy var tableView = UITableView() .. {
+    private lazy var tableView = UITableView() ... {
         $0.delegate = self
         $0.dataSource = self
         $0.register(ListEpisodesCell.self, forCellReuseIdentifier: ListEpisodesCell.identifier)
