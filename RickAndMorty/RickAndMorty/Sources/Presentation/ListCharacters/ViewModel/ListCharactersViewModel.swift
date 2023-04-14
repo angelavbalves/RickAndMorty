@@ -27,9 +27,5 @@ class ListCharactersViewModel {
     func fetchCharacters(_ url: URL, _ page: Int, _ query: String) -> Observable<CharactersResponse> {
         service
             .characters(url, page, query)
-            .do(
-                onNext: { [weak self] (_: CharactersResponse) in
-                }
-            )
     }
 }
