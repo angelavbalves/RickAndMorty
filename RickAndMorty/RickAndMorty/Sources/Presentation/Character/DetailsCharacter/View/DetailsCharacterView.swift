@@ -5,7 +5,6 @@
 //  Created by Angela Alves on 27/02/23.
 //
 
-import Foundation
 import UIKit
 import TinyConstraints
 import Kingfisher
@@ -21,12 +20,12 @@ class DetailsCharacterView: RMView {
         configureView()
     }
 
-    private let backgroundStackView = UIStackView() .. {
+    private let backgroundStackView = UIStackView() ... {
         $0.axis = .vertical
         $0.spacing = Spacing.large
     }
 
-    private lazy var characterImage = UIImageView() .. {
+    private lazy var characterImage = UIImageView() ... {
         $0.height(300)
         $0.width(150)
         $0.layer.masksToBounds = false
@@ -35,7 +34,7 @@ class DetailsCharacterView: RMView {
         $0.contentMode = .scaleAspectFill
     }
 
-    private lazy var name = UILabel() .. {
+    private lazy var name = UILabel() ... {
         $0.text = character.name
         $0.font = Fonts.title
         $0.textAlignment = .center
