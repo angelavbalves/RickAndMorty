@@ -25,7 +25,7 @@ class ListEpisodesCell: UITableViewCell {
     }
 
     // MARK: - Views
-    private let bottomView = UIView() .. {
+    private let bottomView = UIView() ... {
         $0.layer.masksToBounds = false
         $0.layer.cornerRadius = 10.0
         $0.backgroundColor = AppColors.purple
@@ -34,28 +34,28 @@ class ListEpisodesCell: UITableViewCell {
         $0.layer.shadowOffset = CGSize(width: 0, height: 3)
     }
 
-    private let stackView = UIStackView() .. {
+    private let stackView = UIStackView() ... {
         $0.axis = .horizontal
         $0.spacing = Spacing.large
         $0.alignment = .center
     }
 
-    private let leftStackView = UIStackView() .. {
+    private let leftStackView = UIStackView() ... {
         $0.axis = .vertical
         $0.spacing = Spacing.large
     }
 
-    private let episodeName = UILabel() .. {
+    private let episodeName = UILabel() ... {
         $0.font = Fonts.title
         $0.numberOfLines = 0
         $0.lineBreakMode = .byWordWrapping
     }
 
-    private let episodeNumber = UILabel() .. {
+    private let episodeNumber = UILabel() ... {
         $0.font = Fonts.text
     }
 
-    private let chevron = UIImageView() .. {
+    private let chevron = UIImageView() ... {
         let chevron = UIImage(systemName: "chevron.right")
         $0.tintColor = .black
         $0.image = chevron

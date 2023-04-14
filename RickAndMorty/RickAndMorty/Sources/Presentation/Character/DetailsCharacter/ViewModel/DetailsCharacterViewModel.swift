@@ -1,24 +1,24 @@
 //
-//  ListPlacesViewModel.swift
+//  DetailsCharacterViewModel.swift
 //  RickAndMorty
 //
-//  Created by Angela Alves on 24/02/23.
+//  Created by Angela Alves on 27/02/23.
 //
 
 import Foundation
-import RxSwift
 
-class ListPlacesViewModel {
+class DetailsCharacterViewModel {
 
-    // MARK: - Properties
     weak var coordinator: AppCoordinator?
     private let service: RMService
+    let character: CharacterResponseItem
 
-    // MARK: - Init
     init(
+        character: CharacterResponseItem,
         service: RMService = .live(),
         coordinator: AppCoordinator?
     ) {
+        self.character = character
         self.service = service
         self.coordinator = coordinator
     }

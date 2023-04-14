@@ -1,0 +1,39 @@
+name: RickAndMorty
+
+options:
+  bundleIdPrefix: com.RickAndMorty
+
+settings:
+  TARGETED_DEVICE_FAMILY: 1 # iPhone Only
+
+packages:
+  TinyConstraints:
+    url: "https://github.com/roberthein/TinyConstraints"
+    from: "4.0.1"
+  Kingfisher:
+    url: "https://github.com/onevcat/Kingfisher.git"
+    from: "6.3.0"
+  RxSwift:
+    url: "https://github.com/ReactiveX/RxSwift.git"
+    from: "6.5.0"
+  XCoordinator:
+    url: "https://github.com/QuickBirdEng/XCoordinator.git"
+    from: "2.0"
+
+targets:
+  RickAndMorty:
+    type: application
+    platform: iOS
+    deployment_target: 15.2
+    sources:
+      - RickAndMorty
+
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.RickAndMorty
+
+    dependencies:
+      - package: TinyConstraints
+      - package: Kingfisher
+      - package: RxSwift
+      - package: XCoordinator

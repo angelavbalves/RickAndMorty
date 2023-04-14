@@ -12,20 +12,15 @@ import UIKit
 class ListEpisodesViewModel {
 
     // MARK: - Properties
-    private weak var coordinator: ListEpisodesCoordinator?
+    weak var coordinator: AppCoordinator?
     private let service: RMService
 
     // MARK: - Init
     init(
         service: RMService = .live(),
-        coordinator: ListEpisodesCoordinator
+        coordinator: AppCoordinator
     ) {
         self.service = service
         self.coordinator = coordinator
-    }
-
-    func fetchEpisodes(_ url: URL, _ page: Int, _ query: String) -> Observable<EpisodesResponse> {
-        service
-            .episodes(url, page, query)
     }
 }

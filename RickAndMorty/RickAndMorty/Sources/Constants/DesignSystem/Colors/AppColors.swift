@@ -14,6 +14,7 @@ struct AppColors {
     static let darkGreen = UIColor(red: 0.38, green: 0.75, blue: 0.35, alpha: 1.00)
     static let red = UIColor(red: 0.90, green: 0.22, blue: 0.20, alpha: 1.00)
     static let blue = UIColor(red: 0.15, green: 0.56, blue: 0.82, alpha: 1.00)
+    static let lightYellow = UIColor(red: 1.00, green: 1.00, blue: 0.74, alpha: 1.00)
     static let yellow = UIColor(red: 0.99, green: 0.80, blue: 0.23, alpha: 1.00)
     static let purple = UIColor(red: 0.60, green: 0.27, blue: 0.67, alpha: 1.00)
     static let lightPurple = UIColor(red: 1.00, green: 0.79, blue: 1.00, alpha: 1.00)

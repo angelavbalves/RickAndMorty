@@ -33,21 +33,5 @@ class ListEpisodesViewController: RMViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Episodes"
-        fetchEpisodes(currentPage, "")
-    }
-
-    private func fetchEpisodes(_ currentPage: Int, _ query: String) {
-        guard let url = ApiClient.getURLs()?.episodes else { return }
-        viewModel
-            .fetchEpisodes(url, currentPage, query)
-            .subscribe(onNext: { [weak self] episodesResponse in
-                let episodes = episodesResponse.results.map(EpisodeResponse.init)
-                self?.episodes = episodes
-                DispatchQueue.main.async { [weak self] in
-                    self?.listEpisodesView.receive(episodes)
-                }
-
-            })
-            .disposed(by: disposeBag)
     }
 }
