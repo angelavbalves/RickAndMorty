@@ -32,6 +32,7 @@ class ListCharactersViewController: RMViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Characters"
         fetchCharacters(currentPage, "")
     }
 
