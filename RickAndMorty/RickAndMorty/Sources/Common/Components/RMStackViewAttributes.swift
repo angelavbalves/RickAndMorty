@@ -22,12 +22,12 @@ class RMStackViewAttributes: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private let titleLabel = UILabel() .. {
+    private let titleLabel = UILabel() ... {
         $0.font = Fonts.subtitle
         $0.setCompressionResistance(.required, for: .horizontal)
     }
 
-    private let backgroundLabel = UIView() .. {
+    private let backgroundLabel = UIView() ... {
         $0.layer.masksToBounds = false
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 6.0
@@ -36,7 +36,7 @@ class RMStackViewAttributes: UIStackView {
         $0.layer.shadowOffset = CGSize(width: 5, height: 3)
     }
 
-    private let propertyLabel = UILabel() .. {
+    private let propertyLabel = UILabel() ... {
         $0.font = Fonts.largeText
         $0.textAlignment = .center
         $0.numberOfLines = 0
