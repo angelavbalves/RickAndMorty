@@ -6,11 +6,16 @@
 //
 
 import UIKit
+import RxSwift
 
 class ListCharactersViewController: RMViewController {
 
     // MARK: - Properties
     private let viewModel: ListCharactersViewModel
+    private let rmClient = RMClient()
+    private var urls: Observable<AppEndpoints>?
+    private let disposeBag = DisposeBag()
+    private var currentPage = 1
 
     // MARK: - View
     private lazy var listCharactersView = ListCharactersView()
@@ -28,5 +33,16 @@ class ListCharactersViewController: RMViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchCharacters(currentPage, "")
+    }
+
+    private func fetchCharacters(_ currentPage: Int, _ query: String) {
+        guard let url = ApiClient.getURLs()?.characters else { return }
+        viewModel
+            .fetchCharacters(url, currentPage, query)
+            .subscribe(onNext: { charactersResponse in
+                let characters = charactersResponse.results.map(CharacterResponse.init)
+            })
+            .disposed(by: disposeBag)
     }
 }
