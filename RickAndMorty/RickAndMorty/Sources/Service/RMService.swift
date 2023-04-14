@@ -10,22 +10,28 @@ import RxSwift
 import UIKit
 
 struct RMService {
-    var appURLs: (_ url: URL) -> Observable<AppEndpoints>
-    var characters: (_ url: URL, _ page: Int, _ query: String) -> Observable<CharactersResponse>
-    var episodes: (_ url: URL, _ page: Int, _ query: String) -> Observable<EpisodesResponse>
-    var locations: (_ url: URL, _ page: Int, _ query: String) -> Observable<LocationsResponse>
+    var characters: (_ endpoint: RickAndMortyEndpoints) -> Observable<CharactersResponse>
+    var episodes: (_ endpoint: RickAndMortyEndpoints) -> Observable<EpisodesResponse>
+    var locations: (_ endpoint: RickAndMortyEndpoints) -> Observable<LocationsResponse>
 }
 
 extension RMService {
     static func live(_ apiClient: ApiClientProtocol = RMClient()) -> Self {
-        .init { url in
-            apiClient.makeRequest(url: url)
-        } characters: { url, _, _ in
-            apiClient.makeRequest(url: url)
-        } episodes: { url, _, _ in
-            apiClient.makeRequest(url: url)
-        } locations: { url, _, _ in
-            apiClient.makeRequest(url: url)
+        .init { endpoint in
+            apiClient
+                .makeRequest(
+                    endpoint: endpoint
+                )
+        } episodes: { endpoint in
+            apiClient
+                .makeRequest(
+                    endpoint: endpoint
+                )
+        } locations: { endpoint in
+            apiClient
+                .makeRequest(
+                    endpoint: endpoint
+                )
         }
     }
 }
