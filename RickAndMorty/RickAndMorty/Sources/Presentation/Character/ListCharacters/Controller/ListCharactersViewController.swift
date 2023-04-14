@@ -14,10 +14,12 @@ class ListCharactersViewController: RMViewController {
     private let viewModel: ListCharactersViewModel
     private let disposeBag = DisposeBag()
     private var currentPage = 1
-    private var characters = [CharacterResponse]()
+    private var characters = [CharacterResponseItem]()
 
     // MARK: - View
-    private lazy var listCharactersView = ListCharactersView()
+    private lazy var rootView = ListCharactersView { [weak self] in
+        self?.didTapOnCharacter($0)
+    }
 
     // MARK: -  Init
     init(viewModel: ListCharactersViewModel) {
@@ -27,26 +29,29 @@ class ListCharactersViewController: RMViewController {
 
     // MARK: - Life Cycle
     override func loadView() {
-        view = listCharactersView
+        view = rootView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Characters"
-        fetchCharacters(currentPage, "")
+        fetchCharacters()
+        configureCloseButton()
     }
 
-    private func fetchCharacters(_ currentPage: Int, _ query: String) {
-        guard let url = ApiClient.getURLs()?.characters else { return }
+    private func fetchCharacters() {
         viewModel
-            .fetchCharacters(url, currentPage, query)
-            .subscribe(onNext: { [weak self] charactersResponse in
-                let characters = charactersResponse.results.map(CharacterResponse.init)
-                self?.characters = characters
+            .fetchCharacters()
+            .subscribe { [weak self] response in
                 DispatchQueue.main.async {
-                    self?.listCharactersView.receive(characters)
+                    self?.rootView.receive(response.results)
                 }
-            })
-            .disposed(by: disposeBag)
+            } onError: { _ in
+                print("[ERROR] - Erro em buscar os personagens")
+            }.disposed(by: disposeBag)
+    }
+
+    private func didTapOnCharacter(_ character: CharacterResponseItem) {
+        viewModel.didTapOnCharacter(character)
     }
 }

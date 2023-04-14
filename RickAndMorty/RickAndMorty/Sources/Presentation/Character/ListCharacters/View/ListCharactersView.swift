@@ -13,10 +13,17 @@ import UIKit
 class ListCharactersView: RMView {
 
     // MARK: - Properties
-    private var characters = [CharacterResponse]()
+    private var characters = [CharacterResponseItem]()
+    private let didTapOnCharacter: (_ character: CharacterResponseItem) -> Void
+
+    // MARK: - Init
+    init(didTapOnCharacter: @escaping (_ character: CharacterResponseItem) -> Void) {
+        self.didTapOnCharacter = didTapOnCharacter
+        super.init()
+    }
 
     // MARK: - Views
-    private lazy var tableView = UITableView() .. {
+    private lazy var tableView = UITableView() ... {
         $0.delegate = self
         $0.dataSource = self
         $0.register(ListCharacterCell.self, forCellReuseIdentifier: ListCharacterCell.identifier)
@@ -34,13 +41,18 @@ class ListCharactersView: RMView {
     }
 
     // MARK: - Aux
-    func receive(_ characters: [CharacterResponse]) {
+    func receive(_ characters: [CharacterResponseItem]) {
         self.characters = characters
         tableView.reloadData()
     }
 }
 
-extension ListCharactersView: UITableViewDelegate {}
+extension ListCharactersView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let character = characters[indexPath.row]
+        didTapOnCharacter(character)
+    }
+}
 
 extension ListCharactersView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
