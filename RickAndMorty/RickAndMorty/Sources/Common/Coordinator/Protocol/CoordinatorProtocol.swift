@@ -10,7 +10,7 @@ import RxSwift
 import UIKit
 
 protocol CoordinatorProtocol {
-    var rootViewController: RMNavigationController? { get }
+    var navController: RMNavigationController? { get }
     var childCoordinator: [CoordinatorProtocol] { get set }
     func start()
 }

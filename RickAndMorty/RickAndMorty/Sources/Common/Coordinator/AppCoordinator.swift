@@ -8,25 +8,26 @@
 import Foundation
 import RxSwift
 import UIKit
+import XCoordinator
 
-final class AppCoordinator: CoordinatorProtocol {
+class AppCoordinator: ViewCoordinator<AppRoutes> {
 
-    // MARK: - Properties
-    private var window: UIWindow
-    var rootViewController: RMNavigationController? { window.rootViewController as? RMNavigationController }
-    var childCoordinator: [CoordinatorProtocol] = []
-
-    // MARK: - Init
-    init(window: UIWindow) {
-        self.window = window
-        window.makeKeyAndVisible()
+    init() {
+        super.init(rootViewController: UIViewController(), initialRoute: .home)
     }
 
-    // MARK: - Start
-    func start() {
-        let coordinator = LoadCoordinator()
-        window.rootViewController = coordinator.rootViewController
-        childCoordinator.append(coordinator)
-        coordinator.start()
+    override func prepareTransition(for route: AppRoutes) -> ViewTransition {
+        switch route {
+            case .home:
+                let homeViewController = HomeViewController(router: weakRouter)
+                return .present(homeViewController)
+            case .characters:
+                let coordinator = ListCharacterCoordinator()
+                return .present(coordinator)
+            case .locations:
+                return .none()
+            case .episodes:
+                return .none()
+        }
     }
 }
