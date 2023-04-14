@@ -6,21 +6,26 @@
 //
 
 import Foundation
-import UIKit
 import TinyConstraints
+import UIKit
 
 class SideMenuRow: RMView {
 
     private let icon: UIImage?
     private let menuTitle: String
+    private let onTap: () -> Void
 
-    init(icon: UIImage?, title: String) {
+    init(
+        icon: UIImage?,
+        title: String,
+        onTap: @escaping () -> Void
+    ) {
         self.icon = icon
         menuTitle = title
+        self.onTap = onTap
         super.init()
         configure()
     }
-
 
     // MARK: - Views
     private let bottomView = UIView() .. {
@@ -34,7 +39,7 @@ class SideMenuRow: RMView {
 
     private let stackView = UIStackView() .. {
         $0.axis = .horizontal
-        $0.spacing  = 6
+        $0.spacing = Spacing.tiny
         $0.distribution = .fillProportionally
     }
 
@@ -66,5 +71,12 @@ class SideMenuRow: RMView {
     private func configure() {
         menuLabel.text = menuTitle
         menuIcon.image = icon
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        addGestureRecognizer(tapGesture)
+    }
+
+    @objc
+    func didTap() {
+        onTap()
     }
 }

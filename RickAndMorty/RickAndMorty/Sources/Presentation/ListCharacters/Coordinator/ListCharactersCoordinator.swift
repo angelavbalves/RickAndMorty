@@ -23,6 +23,6 @@ class ListCharactersCoordinator: CoordinatorProtocol {
         let viewModel = ListCharactersViewModel(coordinator: self)
         let controller = ListCharactersViewController(viewModel: viewModel)
 
-        rootViewController?.setViewControllers([controller], animated: false)
+        rootViewController?.setViewControllers([controller], animated: true)
     }
 }

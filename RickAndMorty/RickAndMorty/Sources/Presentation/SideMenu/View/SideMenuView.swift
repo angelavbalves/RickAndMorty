@@ -11,24 +11,42 @@ import UIKit
 
 class SideMenuView: RMView {
 
-    private let charactersRow = SideMenuRow(
+    private lazy var charactersRow = SideMenuRow(
         icon: UIImage(
             systemName: "person.crop.circle.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal),
-        title: "Characters")
+        title: "Characters",
+        onTap: didTapOnCharactersList
+    )
+    private lazy var placesRow = SideMenuRow(
+        icon: UIImage(
+            systemName: "globe.europe.africa.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal),
+        title: "Places",
+        onTap: didTapOnPlacesList
+    )
+    private lazy var episodesRow = SideMenuRow(
+        icon: UIImage(systemName: "film.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal),
+        title: "Episodes",
+        onTap: didTapOnEpisodesList
+    )
     private let favoriteEpisodesRow = SideMenuRow(
         icon: UIImage(
             systemName: "heart.circle.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal),
-        title: "Favorite episodes")
-    private let placesRow = SideMenuRow(
-        icon: UIImage(
-            systemName: "globe.europe.africa.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal),
-        title: "Places")
-    private let episodesRow = SideMenuRow(
-        icon: UIImage(
-            systemName: "film.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal),
-        title: "Episodes")
+        title: "Favorite episodes",
+        onTap: {}
+    )
 
-    override init() {
+    private let didTapOnCharactersList: () -> Void
+    private let didTapOnEpisodesList: () -> Void
+    private let didTapOnPlacesList: () -> Void
+
+    init(
+        didTapOnCharactersList: @escaping () -> Void,
+        didTapOnEpisodesList: @escaping () -> Void,
+        didTapOnPlacesList: @escaping () -> Void
+    ) {
+        self.didTapOnCharactersList = didTapOnCharactersList
+        self.didTapOnEpisodesList = didTapOnEpisodesList
+        self.didTapOnPlacesList = didTapOnPlacesList
         super.init()
         backgroundColor = AppColors.darkGreen
     }
