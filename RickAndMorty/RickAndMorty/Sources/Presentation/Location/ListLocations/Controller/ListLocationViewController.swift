@@ -33,7 +33,7 @@ final class ListLocationViewController: RMViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Places"
+        title = "Lugares"
         fetchLocations()
         configureCloseButton()
         configureAppearance(AppColors.pink)
