@@ -18,6 +18,7 @@ class ListEpisodesCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureSubviews()
         configureConstraints()
+        accessoryType = .disclosureIndicator
     }
 
     required init?(coder: NSCoder) {
@@ -28,58 +29,42 @@ class ListEpisodesCell: UITableViewCell {
     private let bottomView = UIView() ... {
         $0.layer.masksToBounds = false
         $0.layer.cornerRadius = 10.0
-        $0.backgroundColor = AppColors.purple
+        $0.backgroundColor = .white
         $0.layer.shadowColor = UIColor.black.cgColor
         $0.layer.shadowOpacity = 0.5
         $0.layer.shadowOffset = CGSize(width: 0, height: 3)
     }
 
     private let stackView = UIStackView() ... {
-        $0.axis = .horizontal
-        $0.spacing = Spacing.large
-        $0.alignment = .center
-    }
-
-    private let leftStackView = UIStackView() ... {
         $0.axis = .vertical
-        $0.spacing = Spacing.large
+        $0.spacing = Spacing.small
     }
 
     private let episodeName = UILabel() ... {
-        $0.font = Fonts.title
+        $0.font = Fonts.subtitle
         $0.numberOfLines = 0
         $0.lineBreakMode = .byWordWrapping
     }
 
     private let episodeNumber = UILabel() ... {
-        $0.font = Fonts.text
-    }
-
-    private let chevron = UIImageView() ... {
-        let chevron = UIImage(systemName: "chevron.right")
-        $0.tintColor = .black
-        $0.image = chevron
-        $0.contentMode = .scaleAspectFit
-        $0.setHugging(.defaultHigh, for: .horizontal)
+        $0.font = Fonts.smallText
     }
 
     func configureSubviews() {
-        backgroundColor = AppColors.lightPurple
+        backgroundColor = .clear
         addSubview(bottomView)
         bottomView.addSubview(stackView)
-        stackView.addArrangedSubview(leftStackView)
-        stackView.addArrangedSubview(chevron)
 
-        leftStackView.addArrangedSubview(episodeName)
-        leftStackView.addArrangedSubview(episodeNumber)
+        stackView.addArrangedSubview(episodeName)
+        stackView.addArrangedSubview(episodeNumber)
     }
 
     func configureConstraints() {
-        bottomView.edgesToSuperview(insets: .uniform(Spacing.small), usingSafeArea: true)
-        stackView.edges(to: bottomView, insets: .uniform(Spacing.huge))
+        bottomView.edgesToSuperview(insets: .uniform(Spacing.extraSmall), usingSafeArea: true)
+        stackView.edges(to: bottomView, insets: .uniform(Spacing.medium))
     }
 
-    func setup(_ episode: EpisodeResponse) {
+    func setup(_ episode: EpisodeResponseItem) {
         episodeName.text = episode.name
         episodeNumber.text = episode.episode
     }
