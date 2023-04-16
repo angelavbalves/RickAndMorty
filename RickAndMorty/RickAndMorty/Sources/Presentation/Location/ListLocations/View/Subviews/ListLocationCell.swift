@@ -1,5 +1,5 @@
 //
-//  ListPlacesCell.swift
+//  ListLocationCell.swift
 //  RickAndMorty
 //
 //  Created by Angela Alves on 27/02/23.
@@ -8,15 +8,17 @@
 import Foundation
 import UIKit
 
-class ListPlacesCell: UITableViewCell {
+class ListLocationCell: UITableViewCell {
 
-    static let identifier = "listPlacesCell"
+    static let identifier = "listLocationCell"
 
     // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureSubviews()
         configureConstraints()
+        accessoryType = .disclosureIndicator
+        selectionStyle = .none
     }
 
     required init?(coder: NSCoder) {
@@ -27,7 +29,7 @@ class ListPlacesCell: UITableViewCell {
     private let bottomView = UIView() ... {
         $0.layer.masksToBounds = false
         $0.layer.cornerRadius = 10.0
-        $0.backgroundColor = AppColors.pink
+        $0.backgroundColor = .white
         $0.layer.shadowColor = UIColor.black.cgColor
         $0.layer.shadowOpacity = 0.5
         $0.layer.shadowOffset = CGSize(width: 0, height: 3)
@@ -35,46 +37,30 @@ class ListPlacesCell: UITableViewCell {
 
     private let stackView = UIStackView() ... {
         $0.axis = .horizontal
-        $0.spacing = Spacing.large
+        $0.spacing = Spacing.small
         $0.alignment = .center
     }
 
-    private let leftStackView = UIStackView() ... {
-        $0.axis = .vertical
-        $0.spacing = Spacing.large
-    }
-
-    private let placeName = UILabel() ... {
+    private let locationName = UILabel() ... {
         $0.font = Fonts.title
         $0.numberOfLines = 0
         $0.lineBreakMode = .byWordWrapping
     }
 
-
-    private let chevron = UIImageView() ... {
-        let chevron = UIImage(systemName: "chevron.right")
-        $0.tintColor = .black
-        $0.image = chevron
-        $0.contentMode = .scaleAspectFit
-        $0.setHugging(.defaultHigh, for: .horizontal)
-    }
-
     func configureSubviews() {
-        backgroundColor = AppColors.lightPink
+        backgroundColor = .clear
         addSubview(bottomView)
         bottomView.addSubview(stackView)
-        stackView.addArrangedSubview(leftStackView)
-        stackView.addArrangedSubview(chevron)
 
-        leftStackView.addArrangedSubview(placeName)
+        stackView.addArrangedSubview(locationName)
     }
 
     func configureConstraints() {
-        bottomView.edgesToSuperview(insets: .uniform(Spacing.small), usingSafeArea: true)
-        stackView.edges(to: bottomView, insets: .uniform(Spacing.huge))
+        bottomView.edgesToSuperview(insets: .uniform(Spacing.extraSmall), usingSafeArea: true)
+        stackView.edges(to: bottomView, insets: .uniform(Spacing.medium))
     }
 
-    func setup(_ place: LocationResponse) {
-        placeName.text = place.name
+    func setup(_ location: LocationResponseItem) {
+        locationName.text = location.name
     }
 }
