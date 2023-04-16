@@ -9,8 +9,8 @@ import Foundation
 import RxSwift
 
 class RMClient: ApiClientProtocol {
-    func makeRequest<T: Decodable>(endpoint: RickAndMortyEndpoints) -> Observable<T> {
-        Observable.create { observer in
+    func makeRequest<T: Decodable>(endpoint: RickAndMortyEndpoints) -> Single<T> {
+        Single.create { observer in
             var components = URLComponents()
             components.scheme = "https"
             components.host = endpoint.host
@@ -23,37 +23,33 @@ class RMClient: ApiClientProtocol {
                 let request = URLRequest(url: url)
                 URLSession.shared.dataTask(with: request) { data, response, error in
                     if let error = error {
-                        observer.onError(error)
-                        observer.onCompleted()
+                        observer(.failure(error))
                     }
 
                     guard
                         let httpResponse = response as? HTTPURLResponse,
-                        (200...299).contains(httpResponse.statusCode)
+                        (200 ... 299).contains(httpResponse.statusCode)
                     else {
-                        observer.onError(
-                            ErrorState
-                                .badRequest(
-                                    "the return of the request was different from 2xx")
-                        )
-                        observer.onCompleted()
+                        observer(.failure(
+                            ErrorState.badRequest("The return of the request was different from 2xx")
+                        ))
                         return
                     }
 
                     guard let data = data else {
-                        observer.onError(
-                            ErrorState
-                                .invalidData("Invalid Data")
-                        )
-                        observer.onCompleted()
+                        observer(.failure(
+                            ErrorState.invalidData("Invalid Data")
+                        ))
                         return
                     }
 
                     do {
                         let model = try JSONDecoder().decode(T.self, from: data)
-                        observer.onNext(model)
+                        observer(.success(model))
                     } catch {
-                        observer.onError(ErrorState.generic("Decoding Error"))
+                        observer(.failure(
+                            ErrorState.generic("Decoding Error")
+                        ))
                     }
                 }.resume()
             }
