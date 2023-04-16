@@ -22,12 +22,6 @@ class RMViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Life Cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Rick & Morty"
-    }
-
     func configureCloseButton() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .close,
@@ -39,5 +33,17 @@ class RMViewController: UIViewController {
     @objc
     func didTapOnCloseButton() {
         navigationController?.dismiss(animated: true)
+    }
+
+    func configureAppearance(_ color: UIColor) {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = color
+
+        navigationController?.navigationBar.tintColor = .black
+
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
 }
