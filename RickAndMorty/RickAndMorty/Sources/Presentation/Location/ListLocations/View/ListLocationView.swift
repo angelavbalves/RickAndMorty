@@ -1,5 +1,5 @@
 //
-//  ListPlacesView.swift
+//  ListLocationView.swift
 //  RickAndMorty
 //
 //  Created by Angela Alves on 24/02/23.
@@ -9,18 +9,18 @@ import Foundation
 import TinyConstraints
 import UIKit
 
-class ListPlacesView: RMView {
+class ListLocationView: RMView {
 
     // MARK: - Properties
-    private var places = [LocationResponse]()
+    private var locations = [LocationResponseItem]()
 
     // MARK: - View
     private lazy var tableView = UITableView() ... {
         $0.delegate = self
         $0.dataSource = self
-        $0.register(ListPlacesCell.self, forCellReuseIdentifier: ListPlacesCell.identifier)
+        $0.register(ListLocationCell.self, forCellReuseIdentifier: ListLocationCell.identifier)
         $0.separatorStyle = .none
-        $0.backgroundColor = AppColors.lightPink
+        $0.backgroundColor = AppColors.pink
     }
 
     // MARK: - Init
@@ -29,28 +29,31 @@ class ListPlacesView: RMView {
     }
 
     override func configureConstraints() {
-        tableView.edgesToSuperview(usingSafeArea: true)
+        tableView.edgesToSuperview()
     }
 
     // MARK: - Aux
-    func receive(_ places: [LocationResponse]) {
-        self.places = places
+    func receive(_ locations: [LocationResponseItem]) {
+        self.locations = locations
         tableView.reloadData()
     }
 }
 
-extension ListPlacesView: UITableViewDelegate {}
+extension ListLocationView: UITableViewDelegate {}
 
-extension ListPlacesView: UITableViewDataSource {
+extension ListLocationView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        places.count
+        locations.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ListPlacesCell.identifier, for: indexPath) as! ListPlacesCell
-        let place = places[indexPath.row]
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: ListLocationCell.identifier, for: indexPath) as? ListLocationCell
+        else {
+            return UITableViewCell()
+        }
+        let place = locations[indexPath.row]
         cell.setup(place)
-        cell.selectionStyle = .none
         return cell
     }
 }
