@@ -90,6 +90,7 @@ class ListCharacterCell: UITableViewCell {
 
     func configureSubviews() {
         backgroundColor = AppColors.lightGreen
+        backgroundColor = .clear
         addSubview(bottomView)
         bottomView.addSubview(stackView)
         stackView.addArrangedSubview(leftStackView)

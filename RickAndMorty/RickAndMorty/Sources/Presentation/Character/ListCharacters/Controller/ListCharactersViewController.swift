@@ -37,6 +37,7 @@ class ListCharactersViewController: RMViewController {
         title = "Characters"
         fetchCharacters()
         configureCloseButton()
+        configureAppearance(AppColors.darkGreen)
     }
 
     private func fetchCharacters() {

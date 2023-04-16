@@ -32,12 +32,12 @@ class ListCharactersView: RMView {
 
     // MARK: - Setup
     override func configureSubviews() {
-        tableView.backgroundColor = AppColors.darkGreen
+        tableView.backgroundColor = AppColors.lightGreen
         addSubview(tableView)
     }
 
     override func configureConstraints() {
-        tableView.edgesToSuperview(usingSafeArea: true)
+        tableView.edgesToSuperview()
     }
 
     // MARK: - Aux
