@@ -26,7 +26,7 @@ class ListCharactersViewModel {
 
     func fetchCharacters() -> Observable<CharactersResponse> {
         service
-            .characters()
+            .getCharacters()
             .asObservable()
     }
 

@@ -26,7 +26,7 @@ final class ListLocationViewModel {
 
     func fetchLocations() -> Observable<LocationsResponse> {
         service
-            .locations()
+            .getLocations()
             .asObservable()
     }
 }
