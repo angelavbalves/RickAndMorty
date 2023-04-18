@@ -21,8 +21,10 @@ final class ListEpisodeCoordinator: NavigationCoordinator<EpisodeRoutes> {
                 let viewModel = ListEpisodesViewModel(router: weakRouter)
                 let controller = ListEpisodesViewController(viewModel: viewModel)
                 return .push(controller)
-            case .details(let characterItem):
-                return .push(UIViewController())
+            case let .details(episode):
+                let viewModel = DetailsEpisodeViewModel(router: weakRouter)
+                let controller = DetailsEpisodeViewController(viewModel: viewModel, episode: episode)
+                return .push(controller)
         }
     }
 }
