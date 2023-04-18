@@ -10,5 +10,5 @@ import XCoordinator
 
 enum EpisodeRoutes: Route {
     case list
-    case details(LocationResponseItem)
+    case details(EpisodeResponseItem)
 }
