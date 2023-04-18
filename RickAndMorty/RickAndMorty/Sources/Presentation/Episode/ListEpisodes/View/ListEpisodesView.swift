@@ -14,6 +14,7 @@ class ListEpisodesView: RMView {
 
     // MARK: - Properties
     private var episodes = [EpisodeResponseItem]()
+    private let didTapOnEpisode: (_ episode: EpisodeResponseItem) -> Void
 
     // MARK: - View
     private lazy var tableView = UITableView() ... {
@@ -21,10 +22,15 @@ class ListEpisodesView: RMView {
         $0.dataSource = self
         $0.register(ListEpisodesCell.self, forCellReuseIdentifier: ListEpisodesCell.identifier)
         $0.separatorStyle = .none
-        $0.backgroundColor = AppColors.purple
+        $0.backgroundColor = AppColors.darkGreen
     }
 
     // MARK: - Init
+    init(didTapOnEpisode: @escaping (_ episode: EpisodeResponseItem) -> Void) {
+        self.didTapOnEpisode = didTapOnEpisode
+        super.init()
+    }
+
     override func configureSubviews() {
         addSubview(tableView)
     }
@@ -40,7 +46,12 @@ class ListEpisodesView: RMView {
     }
 }
 
-extension ListEpisodesView: UITableViewDelegate {}
+extension ListEpisodesView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let episode = episodes[indexPath.row]
+        didTapOnEpisode(episode)
+    }
+}
 
 extension ListEpisodesView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

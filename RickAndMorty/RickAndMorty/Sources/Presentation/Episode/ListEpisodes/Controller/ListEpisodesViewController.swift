@@ -15,7 +15,9 @@ class ListEpisodesViewController: RMViewController {
     // MARK: - Properties
     private let viewModel: ListEpisodesViewModel
     private var episodes = [EpisodesResponse]()
-    private lazy var rootView = ListEpisodesView()
+    private lazy var rootView = ListEpisodesView { [weak self] in
+        self?.didTapOnEpisode($0)
+    }
     private var currentPage = 1
     private let disposeBag = DisposeBag()
 
@@ -35,10 +37,10 @@ class ListEpisodesViewController: RMViewController {
         title = "Episódios"
         fetchEpisodes()
         configureCloseButton()
-        configureAppearance(AppColors.purple)
+        configureAppearance(AppColors.darkGreen)
     }
 
-    func fetchEpisodes() {
+    private func fetchEpisodes() {
         viewModel
             .fetchEpisodes()
             .subscribe { [weak self] response in
@@ -49,5 +51,9 @@ class ListEpisodesViewController: RMViewController {
                 print("[ERROR: Erro ao buscar episódios]")
             }
             .disposed(by: disposeBag)
+    }
+
+    private func didTapOnEpisode(_ episode: EpisodeResponseItem) {
+        viewModel.didTapOnEpisode(episode)
     }
 }
