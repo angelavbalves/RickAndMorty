@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol ApiClientProtocol {
-    func makeRequest<T: Decodable>(endpoint: RickAndMortyEndpoints) -> Observable<T>
+    func makeRequest<T: Decodable>(endpoint: RickAndMortyEndpoints) -> Single<T>
 }

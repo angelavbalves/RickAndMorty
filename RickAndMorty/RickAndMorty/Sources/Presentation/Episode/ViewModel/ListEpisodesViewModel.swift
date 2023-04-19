@@ -5,22 +5,28 @@
 //  Created by Angela Alves on 22/02/23.
 //
 
-import Foundation
 import RxSwift
 import UIKit
+import XCoordinator
 
 class ListEpisodesViewModel {
 
     // MARK: - Properties
-    weak var coordinator: AppCoordinator?
+    private let router: WeakRouter<EpisodeRoutes>
     private let service: RMService
 
     // MARK: - Init
     init(
         service: RMService = .live(),
-        coordinator: AppCoordinator
+        router: WeakRouter<EpisodeRoutes>
     ) {
         self.service = service
-        self.coordinator = coordinator
+        self.router = router
+    }
+
+    func fetchEpisodes() -> Observable<EpisodesResponse> {
+        service
+            .episodes()
+            .asObservable()
     }
 }

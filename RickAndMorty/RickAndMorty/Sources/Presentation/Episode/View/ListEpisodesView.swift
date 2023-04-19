@@ -13,7 +13,7 @@ import UIKit
 class ListEpisodesView: RMView {
 
     // MARK: - Properties
-    private var episodes = [EpisodeResponse]()
+    private var episodes = [EpisodeResponseItem]()
 
     // MARK: - View
     private lazy var tableView = UITableView() ... {
@@ -21,7 +21,7 @@ class ListEpisodesView: RMView {
         $0.dataSource = self
         $0.register(ListEpisodesCell.self, forCellReuseIdentifier: ListEpisodesCell.identifier)
         $0.separatorStyle = .none
-        $0.backgroundColor = AppColors.lightPurple
+        $0.backgroundColor = AppColors.purple
     }
 
     // MARK: - Init
@@ -30,11 +30,11 @@ class ListEpisodesView: RMView {
     }
 
     override func configureConstraints() {
-        tableView.edgesToSuperview(usingSafeArea: true)
+        tableView.edgesToSuperview()
     }
 
     // MARK: - Aux
-    func receive(_ episodes: [EpisodeResponse]) {
+    func receive(_ episodes: [EpisodeResponseItem]) {
         self.episodes = episodes
         tableView.reloadData()
     }

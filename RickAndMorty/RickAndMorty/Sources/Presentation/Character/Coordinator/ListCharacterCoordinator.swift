@@ -11,7 +11,7 @@ import XCoordinator
 final class ListCharacterCoordinator: NavigationCoordinator<CharacterRoutes> {
 
     init() {
-        super.init(rootViewController: RMNavigationController(), initialRoute: .list)
+        super.init(rootViewController: UINavigationController(), initialRoute: .list)
     }
 
     override func prepareTransition(for route: CharacterRoutes) -> NavigationTransition {

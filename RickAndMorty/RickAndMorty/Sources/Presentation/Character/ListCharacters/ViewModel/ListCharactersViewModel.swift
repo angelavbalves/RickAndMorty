@@ -5,7 +5,6 @@
 //  Created by Angela Alves on 20/01/23.
 //
 
-import Foundation
 import RxSwift
 import UIKit
 import XCoordinator
@@ -27,7 +26,8 @@ class ListCharactersViewModel {
 
     func fetchCharacters() -> Observable<CharactersResponse> {
         service
-            .characters(RickAndMortyEndpoints.characters)
+            .characters()
+            .asObservable()
     }
 
     func didTapOnCharacter(_ character: CharacterResponseItem) {

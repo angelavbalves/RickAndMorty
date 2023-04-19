@@ -13,4 +13,5 @@ struct Fonts {
     static let subtitle = UIFont(name: "MarkerFelt-Thin", size: TextSize.medium)
     static let largeText = UIFont(name: "Courier New", size: TextSize.large)
     static let text = UIFont(name: "Courier New", size: TextSize.medium)
+    static let smallText = UIFont(name: "Courier New", size: TextSize.small)
 }

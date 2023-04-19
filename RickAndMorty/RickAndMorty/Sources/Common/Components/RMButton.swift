@@ -23,7 +23,7 @@ final class RMButton: UIButton {
         self.tintColor = .black
         self.setTitle(title, for: .normal)
         self.setTitleColor(.black, for: .normal)
-        self.backgroundColor = AppColors.lightGreen
+        self.backgroundColor = AppColors.darkGreen
         self.height(52)
         self.layer.cornerRadius = 26
         self.clipsToBounds = true
@@ -32,11 +32,11 @@ final class RMButton: UIButton {
     func setBackgroudColor() {
         if self.isHighlighted {
             self.propertyAnimator.stopAnimation(true)
-            backgroundColor = AppColors.darkGreen
+            backgroundColor = AppColors.lightGreen
             return
         }
         self.propertyAnimator.addAnimations {
-            self.backgroundColor = AppColors.lightGreen
+            self.backgroundColor = AppColors.darkGreen
         }
         self.propertyAnimator.startAnimation()
     }
