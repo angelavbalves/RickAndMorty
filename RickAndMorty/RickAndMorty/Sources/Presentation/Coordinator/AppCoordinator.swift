@@ -24,7 +24,8 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
                 let coordinator = ListCharacterCoordinator()
                 return .present(coordinator)
             case .locations:
-                return .none()
+                let coordinator = LocationListCoordinator()
+                return .present(coordinator)
             case .episodes:
                 let coordinator = ListEpisodeCoordinator()
                 return .present(coordinator)
