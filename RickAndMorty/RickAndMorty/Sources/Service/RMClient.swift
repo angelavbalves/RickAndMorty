@@ -44,7 +44,9 @@ class RMClient: ApiClientProtocol {
                     }
 
                     do {
-                        let model = try JSONDecoder().decode(T.self, from: data)
+                        let decoder = JSONDecoder()
+                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        let model = try decoder.decode(T.self, from: data)
                         observer(.success(model))
                     } catch {
                         observer(.failure(
@@ -53,6 +55,44 @@ class RMClient: ApiClientProtocol {
                     }
                 }.resume()
             }
+            return Disposables.create()
+        }
+    }
+
+    func makeRequestWith<T>(url: URL) -> Single<T> where T: Decodable {
+        Single.create { observer in
+            let request = URLRequest(url: url)
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    observer(.failure(error))
+                }
+
+                guard
+                    let httpResponse = response as? HTTPURLResponse,
+                    (200 ... 299).contains(httpResponse.statusCode)
+                else {
+                    observer(.failure(
+                        ErrorState.badRequest("The return of the request was different from 2xx")
+                    ))
+                    return
+                }
+
+                guard let data = data else {
+                    observer(.failure(
+                        ErrorState.invalidData("Invalid Data")
+                    ))
+                    return
+                }
+
+                do {
+                    let model = try JSONDecoder().decode(T.self, from: data)
+                    observer(.success(model))
+                } catch {
+                    observer(.failure(
+                        ErrorState.generic("Decoding Error")
+                    ))
+                }
+            }.resume()
             return Disposables.create()
         }
     }

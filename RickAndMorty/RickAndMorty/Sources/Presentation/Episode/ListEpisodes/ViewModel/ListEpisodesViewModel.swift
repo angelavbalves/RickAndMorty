@@ -26,7 +26,11 @@ class ListEpisodesViewModel {
 
     func fetchEpisodes() -> Observable<EpisodesResponse> {
         service
-            .episodes()
+            .getEpisodes()
             .asObservable()
+    }
+
+    func didTapOnEpisode(_ episode: EpisodeResponseItem) {
+        router.trigger(.details(episode))
     }
 }

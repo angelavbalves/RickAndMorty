@@ -10,4 +10,5 @@ import RxSwift
 
 protocol ApiClientProtocol {
     func makeRequest<T: Decodable>(endpoint: RickAndMortyEndpoints) -> Single<T>
+    func makeRequestWith<T: Decodable>(url: URL) -> Single<T>
 }
